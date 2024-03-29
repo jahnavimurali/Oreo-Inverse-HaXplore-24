@@ -57,6 +57,7 @@ export default function RegisterScreen({ navigation }) {
                 value={age}
                 onChangeText={setAge}
                 keyboardType="numeric"
+                placeholderTextColor={"black"}
               />
             </View>
             <View style={styles.pickerContainer}>

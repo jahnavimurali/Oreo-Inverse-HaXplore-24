@@ -4,7 +4,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
-import HomeScreen from "./screens/HomeScreen.js";
+import SearchScreen from "./screens/SearchScreen";
+import TicketsScreen from "./screens/TicketsScreen";
+import SettingsScreen from "./screens/SettingsScreen";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import colors from "./Constants/Colors";
+import TempleDetailScreen from "./screens/TempleDetailScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,8 +29,47 @@ function AuthStack() {
 
 function HomeTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === "Search") {
+            iconName = focused ? "search" : "search-outline";
+          } else if (route.name === "Tickets") {
+            iconName = focused ? "ticket" : "ticket-outline";
+          } else if (route.name === "Settings") {
+            iconName = focused ? "settings" : "settings-outline";
+          }
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "black", // Active icon color
+        tabBarInactiveTintColor: "gray", // Inactive icon color
+        tabBarStyle: {
+          paddingBottom: 15,
+          paddingTop: 15,
+          height: 80,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+        },
+      })}
+    >
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Tickets"
+        component={SettingsScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={TicketsScreen}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }
@@ -43,6 +87,11 @@ export default function App() {
           name="HomeTabs"
           component={HomeTabs}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TempleDetail"
+          component={TempleDetailScreen}
+          options={{ headerShown: false }} // Customize as needed for your header
         />
       </Stack.Navigator>
     </NavigationContainer>

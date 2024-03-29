@@ -20,6 +20,16 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text
+        style={{
+          textAlign: "center",
+          fontSize: 30,
+          marginBottom: 20,
+          fontWeight: "900",
+        }}
+      >
+        Welcome back
+      </Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -27,6 +37,7 @@ export default function LoginScreen({ navigation }) {
         onChangeText={setEmail}
         autoCapitalize="none"
         keyboardType="email-address"
+        placeholderTextColor={"black"}
       />
       <TextInput
         style={styles.input}
@@ -34,6 +45,7 @@ export default function LoginScreen({ navigation }) {
         value={password}
         onChangeText={setPassword}
         secureTextEntry
+        placeholderTextColor={"black"}
       />
 
       <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>

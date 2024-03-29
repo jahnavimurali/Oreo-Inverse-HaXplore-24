@@ -8,6 +8,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function HomeScreen({ navigation }) {
-  return <Text> Login</Text>;
+export default function SettingsScreen({ navigation }) {
+  return <Text> SettingsScreen</Text>;
 }
