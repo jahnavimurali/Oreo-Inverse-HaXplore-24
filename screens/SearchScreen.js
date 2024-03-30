@@ -21,6 +21,7 @@ export default function SearchScreen({ navigation }) {
     const fetchTemples = async () => {
       const querySnapshot = await getDocs(collection(db, "Temples"));
       const templePromises = querySnapshot.docs.map(async (doc) => {
+        console.log(doc.id);
         const templeData = doc.data();
         const imageRef = ref(getStorage(), templeData.templeImage);
         const imageUrl = await getDownloadURL(imageRef);

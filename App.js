@@ -12,7 +12,8 @@ import colors from "./Constants/Colors";
 import TempleDetailScreen from "./screens/TempleDetailScreen";
 import BookingSlotsScreen from "./screens/BookingSlotsScreen";
 import PaymentScreen from "./screens/PaymentScreen";
-
+import { UserProvider } from "./screens/components/UserContext";
+import QRCodeScreen from "./screens/QRCodeScreen";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -78,30 +79,33 @@ function HomeTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Auth"
-          component={AuthStack}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="HomeTabs"
-          component={HomeTabs}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="TempleDetail"
-          component={TempleDetailScreen}
-          options={{ headerShown: false }} // Customize as needed for your header
-        />
-        <Stack.Screen
-          name="BookingSlots"
-          component={BookingSlotsScreen}
-          options={{ headerShown: true, title: "" }} // Show header for this screen
-        />
-        <Stack.Screen name="Payment" component={PaymentScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Auth"
+            component={AuthStack}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="HomeTabs"
+            component={HomeTabs}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TempleDetail"
+            component={TempleDetailScreen}
+            options={{ headerShown: false }} // Customize as needed for your header
+          />
+          <Stack.Screen
+            name="BookingSlots"
+            component={BookingSlotsScreen}
+            options={{ headerShown: true, title: "" }} // Show header for this screen
+          />
+          <Stack.Screen name="Payment" component={PaymentScreen} />
+          <Stack.Screen name="QRCodeScreen" component={QRCodeScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </UserProvider>
   );
 }
