@@ -5,7 +5,7 @@ import json
 app = FastAPI()
 
 @app.get("/translate")
-async def translate_text(inlan: str, outlan: str, text: str):
+async def main(inlan: str, outlan: str, text: str):
     url = "https://demo-api.models.ai4bharat.org/inference/translation/v2"
     headers = {
         'Content-Type': 'application/json',

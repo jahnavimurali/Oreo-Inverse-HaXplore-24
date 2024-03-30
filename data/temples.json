@@ -1,0 +1,170 @@
+[
+    {
+        "templeID": 1000,
+        "templeName": "Shri Kashi Viswanath Temple",
+        "location": "Varanasi, Uttar Pradesh",
+        "templeDesc": "Kashi Vishvanath Temple is one of the most famous Hindu temples dedicated to Lord Shiva. The temple stands on the western bank of the holy river Ganga, and is one of the twelve Jyotirlingas, the holiest of Shivatemples.",
+        "geolocation":{
+            "lat": "25.3109° N",
+            "long": "83.0107° E"
+        },
+        "About":[
+            "It is believed that Varanasi is the first Jyotirlinga to manifest itself",
+            "According to the legend, it was at this place that Shiva (the Hindu god of destruction) manifested as an infinite column of light (Jyotirlinga) in front of Brahma (the Hindu god of creation) and Vishnu (the Hindu god of preservation) when they had an argument about their supremacy.",
+            "In order to discover the origin of the luminous column, Vishnu took the form of a boar (Varaha) and tracked the column beneath the ground, while Brahma, who assumed the shape of a swan, scoured the heavens in an attempt to locate the apex of the column. However, both of them were unsuccessful in identifying the source of the luminous column. Yet, Brahma deceitfully asserted that he had discovered the summit of the column, while Vishnu humbly admitted his inability to find the starting point of the radiant column. Due to Brahma's deceit over the discovery of the origin of the luminous column, Shiva penalised him by cutting his fifth head and placing a curse upon him. This curse entailed that Brahma would no longer receive reverence, whereas Vishnu, being truthful, would be equally venerated alongside Shiva and have dedicated temples for eternity."
+        ],
+        "Services":[
+            {
+                "serviceID": 1,
+                "serviceName": "Sugan Darshan Booking",
+                "serviceDesc": "This is a special process for quick queue-less, hassle-free darshan experience. It has been designed for devotees with time constraint, divyangs or any such disability who cannot afford to wait in queue. In this process a Shastri accompanies the devotee for darshan directly without queue and special Prasad is provided to the devotee.",
+                "serviceCategory": "Darshan",
+                "serviceFee": 300,
+                "Slots":[
+                    {
+                        "date": "2024-03-31",
+                        "slots":[
+                            {
+                                "slotTime": "06:00",
+                                "maxBookings": 200,
+                                "currentBookings": 99
+                            },
+                            {
+                                "slotTime": "07:30",
+                                "maxBookings": 200,
+                                "currentBookings": 169
+                            },
+                            {
+                                "slotTime": "09:00",
+                                "maxBookings": 200,
+                                "currentBookings": 200
+                            },
+                            {
+                                "slotTime": "17:00",
+                                "maxBookings": 300,
+                                "currentBookings": 200
+                            },
+                            {
+                                "slotTime": "18:30",
+                                "maxBookings": 100,
+                                "currentBookings": 59
+                            },
+                            {
+                                "slotTime":"19:30",
+                                "maxBookings":100,
+                                "currentBookings":68
+                            }
+                        ]
+                    },
+                    {
+                        "date": "2024-04-01",
+                        "slots":[
+                            {
+                                "slotTime": "06:00",
+                                "maxBookings": 200,
+                                "currentBookings": 99
+                            },
+                            {
+                                "slotTime": "07:30",
+                                "maxBookings": 200,
+                                "currentBookings": 169
+                            },
+                            {
+                                "slotTime": "09:00",
+                                "maxBookings": 200,
+                                "currentBookings": 200
+                            },
+                            {
+                                "slotTime": "17:00",
+                                "maxBookings": 300,
+                                "currentBookings": 200
+                            },
+                            {
+                                "slotTime": "18:30",
+                                "maxBookings": 100,
+                                "currentBookings": 59
+                            },
+                            {
+                                "slotTime":"19:30",
+                                "maxBookings":100,
+                                "currentBookings":68
+                            }
+                        ]
+                    }
+                ]     
+
+            },
+            {
+                "date": "2024-03-31",
+                "slots":[
+                    {
+                        "slotTime": "06:00",
+                        "maxBookings": 200,
+                        "currentBookings": 99
+                    },
+                    {
+                        "slotTime": "07:30",
+                        "maxBookings": 200,
+                        "currentBookings": 169
+                    },
+                    {
+                        "slotTime": "09:00",
+                        "maxBookings": 200,
+                        "currentBookings": 200
+                    },
+                    {
+                        "slotTime": "17:00",
+                        "maxBookings": 300,
+                        "currentBookings": 200
+                    },
+                    {
+                        "slotTime": "18:30",
+                        "maxBookings": 100,
+                        "currentBookings": 59
+                    },
+                    {
+                        "slotTime":"19:30",
+                        "maxBookings":100,
+                        "currentBookings":68
+                    }
+                ]
+            },
+            {
+                "date": "2024-04-01",
+                "slots":[
+                    {
+                        "slotTime": "06:00",
+                        "maxBookings": 200,
+                        "currentBookings": 99
+                    },
+                    {
+                        "slotTime": "07:30",
+                        "maxBookings": 200,
+                        "currentBookings": 169
+                    },
+                    {
+                        "slotTime": "09:00",
+                        "maxBookings": 200,
+                        "currentBookings": 200
+                    },
+                    {
+                        "slotTime": "17:00",
+                        "maxBookings": 300,
+                        "currentBookings": 200
+                    },
+                    {
+                        "slotTime": "18:30",
+                        "maxBookings": 100,
+                        "currentBookings": 59
+                    },
+                    {
+                        "slotTime":"19:30",
+                        "maxBookings":100,
+                        "currentBookings":68
+                    }
+                ]
+            }
+        ]    
+    }
+ ]
+
