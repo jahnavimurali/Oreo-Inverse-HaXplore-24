@@ -134,3 +134,6 @@ dist
 __generated__
 web-build
 bare-apps
+
+# Python
+__pycache__/

@@ -87,7 +87,7 @@ export default function SearchScreen({ navigation }) {
       </View>
       <TextInput
         style={styles.searchInput}
-        placeholder="Shiva temple, Murugan temple..."
+        placeholder="Search Brihadeeswara Temple, Thanjavur"
         value={searchQuery}
         onChangeText={handleSearchChange}
         placeholderTextColor={"black"}
