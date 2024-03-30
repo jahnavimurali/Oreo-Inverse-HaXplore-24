@@ -10,6 +10,7 @@ import SettingsScreen from "./screens/SettingsScreen";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import colors from "./Constants/Colors";
 import TempleDetailScreen from "./screens/TempleDetailScreen";
+import WalletConnect from "./screens/WalletConnect";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -91,6 +92,11 @@ export default function App() {
         <Stack.Screen
           name="TempleDetail"
           component={TempleDetailScreen}
+          options={{ headerShown: false }} // Customize as needed for your header
+        />
+        <Stack.Screen
+          name="WalletConnect"
+          component={WalletConnect}
           options={{ headerShown: false }} // Customize as needed for your header
         />
       </Stack.Navigator>
