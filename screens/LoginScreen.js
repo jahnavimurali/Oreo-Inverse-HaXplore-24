@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   TextInput,
@@ -10,14 +10,31 @@ import colors from "../Constants/Colors";
 import { useTranslation } from "./Translation"; // Assuming this is a custom hook for translation
 import languages from "../Constants/Language";
 import { Picker } from '@react-native-picker/picker';
+import { firebase_auth } from "./components/firebaseconfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language English
 
+  useEffect(()=>{
+    const unsubscribe = firebase_auth.onAuthStateChanged(user => {
+      if(user){
+        navigation.navigate("HomeTabs")
+      }
+    })
+
+    return unsubscribe
+  },[])
+
   const handleLogin = () => {
-    navigation.navigate("HomeTabs");
+    signInWithEmailAndPassword(firebase_auth, email, password)
+    .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log("Logged in with ", user.email);
+    })
+    .catch(error => alert(error.message));
   };
 
   // Update the useTranslation hook to use selectedLanguage

@@ -9,6 +9,8 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import CustomInput from "../custom/inputFields";
 import colors from "../Constants/Colors";
+import { firebase_auth } from "./components/firebaseconfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = React.useState("");
@@ -18,8 +20,15 @@ export default function RegisterScreen({ navigation }) {
   const [gender, setGender] = React.useState("");
 
   const handleregister = () => {
-    navigation.navigate("HomeTabs");
-  };
+    createUserWithEmailAndPassword(firebase_auth, email, password)
+    .then(userCredentials => {
+        const user = userCredentials.user;
+        console.log("User registered:", user.email);
+        navigation.navigate("HomeTabs"); // Navigate after successful registration
+    })
+    .catch(error => alert(error.message));
+};
+
 
   return (
     <SafeAreaView style={{ display: "flex", justifyContent: "space-between" }}>
