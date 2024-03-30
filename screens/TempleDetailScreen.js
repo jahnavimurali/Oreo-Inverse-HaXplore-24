@@ -42,36 +42,28 @@ const TempleDetailsTopTabs = ({ screenProps }) => {
         name="Book Tickets"
         component={TempleDetailTicketScreen}
         initialParams={{
-          name: screenProps.name,
-          location: screenProps.location,
-          imageUrl: screenProps.imageUrl,
+          item: screenProps.item,
         }}
       />
       <Tab.Screen
         name="History"
         component={TempleDetailHistoryScreen}
         initialParams={{
-          name: screenProps.name,
-          location: screenProps.location,
-          imageUrl: screenProps.imageUrl,
+          item: screenProps.item,
         }}
       />
       <Tab.Screen
         name="AI Merch"
         component={TempleDetailAIMerchScreen}
         initialParams={{
-          name: screenProps.name,
-          location: screenProps.location,
-          imageUrl: screenProps.imageUrl,
+          item: screenProps.item,
         }}
       />
       <Tab.Screen
         name="Donate"
         component={TempleDetailDonateScreen}
         initialParams={{
-          name: screenProps.name,
-          location: screenProps.location,
-          imageUrl: screenProps.imageUrl,
+          item: screenProps.item,
         }}
       />
     </Tab.Navigator>
@@ -79,7 +71,7 @@ const TempleDetailsTopTabs = ({ screenProps }) => {
 };
 
 const TempleDetailScreen = ({ route, navigation }) => {
-  const { name, location, imageUrl } = route.params;
+  const { item } = route.params;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -93,14 +85,12 @@ const TempleDetailScreen = ({ route, navigation }) => {
       </View>
       <Text style={styles.headerTitle}>Explore</Text>
       <View style={styles.tempnameloc}>
-        <Text style={styles.templeName}>{name}</Text>
-        <Text style={styles.templeLocation}>{location}</Text>
+        <Text style={styles.templeName}>{item.templeName}</Text>
+        <Text style={styles.templeLocation}>{item.templeLocation}</Text>
       </View>
       <TempleDetailsTopTabs
         screenProps={{
-          name: name,
-          location: location,
-          imageUrl: imageUrl,
+          item: item,
         }}
       />
     </SafeAreaView>

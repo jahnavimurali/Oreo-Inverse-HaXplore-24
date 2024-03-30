@@ -18,11 +18,9 @@
     "axios": "^1.6.8",
     "expo": "~50.0.14",
     "expo-status-bar": "~1.11.1",
-<<<<<<< HEAD
     "firebase": "^10.10.0",
-=======
+
     "firebase-admin": "^12.0.0",
->>>>>>> b7e02c5373beb49ee19fc1def20d499cd26f0397
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.6",

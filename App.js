@@ -10,6 +10,8 @@ import SettingsScreen from "./screens/SettingsScreen";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import colors from "./Constants/Colors";
 import TempleDetailScreen from "./screens/TempleDetailScreen";
+import BookingSlotsScreen from "./screens/BookingSlotsScreen";
+import PaymentScreen from "./screens/PaymentScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,12 +63,12 @@ function HomeTabs() {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Tickets"
+        name="Settings"
         component={SettingsScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Settings"
+        name="Tickets"
         component={TicketsScreen}
         options={{ headerShown: false }}
       />
@@ -93,6 +95,12 @@ export default function App() {
           component={TempleDetailScreen}
           options={{ headerShown: false }} // Customize as needed for your header
         />
+        <Stack.Screen
+          name="BookingSlots"
+          component={BookingSlotsScreen}
+          options={{ headerShown: true, title: "" }} // Show header for this screen
+        />
+        <Stack.Screen name="Payment" component={PaymentScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
