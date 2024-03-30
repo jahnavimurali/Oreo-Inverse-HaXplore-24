@@ -9,46 +9,58 @@ import {
 import colors from "../Constants/Colors";
 import { useTranslation } from "./Translation"; // Assuming this is a custom hook for translation
 import languages from "../Constants/Language";
-import { Picker } from '@react-native-picker/picker';
+import { Picker } from "@react-native-picker/picker";
 import { firebase_auth } from "./components/firebaseconfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useUser } from "./components/UserContext";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language English
+  const { setUserEmail } = useUser();
+  const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default language English
 
-  useEffect(()=>{
-    const unsubscribe = firebase_auth.onAuthStateChanged(user => {
-      if(user){
-        navigation.navigate("HomeTabs")
+  useEffect(() => {
+    const unsubscribe = firebase_auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigation.navigate("HomeTabs");
       }
-    })
+    });
 
-    return unsubscribe
-  },[])
+    return unsubscribe;
+  }, []);
 
   const handleLogin = () => {
     signInWithEmailAndPassword(firebase_auth, email, password)
-    .then(userCredentials => {
-      const user = userCredentials.user;
-      console.log("Logged in with ", user.email);
-    })
-    .catch(error => alert(error.message));
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log("Logged in with ", user.email);
+        setUserEmail(userCredentials.user.email);
+      })
+      .catch((error) => alert("Invalid login credentials"));
   };
 
   // Update the useTranslation hook to use selectedLanguage
-  const translatedWelcomeBack = useTranslation('Welcome back', 'en', selectedLanguage)
-  const translatedLogin = useTranslation('Login', 'en', selectedLanguage);
-  const translatedDontHaveAccount = useTranslation("Don't have an account?", 'en', selectedLanguage);
-  const translatedRegister = useTranslation('Register', 'en', selectedLanguage);
+  const translatedWelcomeBack = useTranslation(
+    "Welcome back",
+    "en",
+    selectedLanguage
+  );
+  const translatedLogin = useTranslation("Login", "en", selectedLanguage);
+  const translatedDontHaveAccount = useTranslation(
+    "Don't have an account?",
+    "en",
+    selectedLanguage
+  );
+  const translatedRegister = useTranslation("Register", "en", selectedLanguage);
 
   return (
     <View style={styles.container}>
       <Picker
         selectedValue={selectedLanguage}
         onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}
-        style={styles.picker}>
+        style={styles.picker}
+      >
         {Object.entries(languages).map(([label, value]) => (
           <Picker.Item key={value} label={label} value={value} />
         ))}
@@ -131,7 +143,7 @@ const styles = StyleSheet.create({
   },
   picker: {
     height: 50,
-    width: '100%',
+    width: "100%",
     marginBottom: 20,
   },
 });

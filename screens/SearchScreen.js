@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   TextInput,
@@ -9,67 +9,46 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TempleCard from "../custom/TempleCard";
-
-// Sample data for temples
-const sampleTemples = [
-  {
-    id: "1",
-    name: "Golden Temple",
-    location: "Amritsar, India",
-    image:
-      "https://cityfurnish.com/blog/wp-content/uploads/2024/01/9087-min-1200x753.jpg",
-  },
-  {
-    id: "2",
-    name: "Meenakshi Temple",
-    location: "Madurai, India",
-    image:
-      "https://t4.ftcdn.net/jpg/04/44/38/47/360_F_444384718_7DDIjSOn7KK3zYlDTCuqoNViziRQWgU4.jpg",
-  },
-  {
-    id: "3",
-    name: "Tirupati Balaji",
-    location: "Tirupati, India",
-    image:
-      "https://cityfurnish.com/blog/wp-content/uploads/2024/01/9087-min-1200x753.jpg",
-  },
-  {
-    id: "4",
-    name: "Siddhivinayak Temple",
-    location: "Mumbai, India",
-    image:
-      "https://t4.ftcdn.net/jpg/04/44/38/47/360_F_444384718_7DDIjSOn7KK3zYlDTCuqoNViziRQWgU4.jpg",
-  },
-  {
-    id: "5",
-    name: "Somnath Temple",
-    location: "Gujarat, India",
-    image:
-      "https://cityfurnish.com/blog/wp-content/uploads/2024/01/9087-min-1200x753.jpg",
-  },
-  // Add more temples as needed
-];
+import { collection, getDocs } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import db from "./components/firebaseconfig"; // Make sure this is the correct path
 
 export default function SearchScreen({ navigation }) {
+  const [temples, setTemples] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const fetchTemples = async () => {
+      const querySnapshot = await getDocs(collection(db, "Temples"));
+      const templePromises = querySnapshot.docs.map(async (doc) => {
+        console.log(doc.id);
+        const templeData = doc.data();
+        const imageRef = ref(getStorage(), templeData.templeImage);
+        const imageUrl = await getDownloadURL(imageRef);
+        return {
+          ...templeData,
+          id: doc.id,
+          imageUrl,
+        };
+      });
+      const templesData = await Promise.all(templePromises);
+      setTemples(templesData);
+    };
+
+    fetchTemples();
+  }, []);
 
   const handleSearchChange = (text) => {
     setSearchQuery(text);
-    // You can also implement search functionality here if needed
   };
 
-  // Only filter temples if there's a search query
   const filteredTemples = searchQuery
-    ? sampleTemples.filter(
+    ? temples.filter(
         (temple) =>
-          temple.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          temple.templeName.toLowerCase().includes(searchQuery.toLowerCase()) ||
           temple.location.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : []; // Return an empty array if there's no search query
-
-  const contentContainerStyle = searchQuery
-    ? styles.contentContainer
-    : styles.contentContainerCentered;
+    : temples;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -92,21 +71,19 @@ export default function SearchScreen({ navigation }) {
         onChangeText={handleSearchChange}
         placeholderTextColor={"black"}
       />
-      {searchQuery && ( // Only render FlatList if there is a search query
+      {searchQuery && (
         <FlatList
           data={filteredTemples}
           keyExtractor={(item) => item.id}
           style={styles.templelist}
           renderItem={({ item }) => (
             <TempleCard
-              name={item.name}
+              name={item.templeName}
               location={item.location}
-              imageUrl={item.image}
+              imageUrl={item.imageUrl}
               onPress={() => {
                 navigation.navigate("TempleDetail", {
-                  name: item.name,
-                  location: item.location,
-                  imageUrl: item.image,
+                  item: item,
                 });
               }}
             />
