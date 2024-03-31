@@ -102,18 +102,20 @@ export default function TicketsScreen({ navigation }) {
 
   return (
     <SafeAreaView>
-      <ScrollView contentContainerStyle={styles.scrollViewContent}>
-        <Text style={styles.sectionTitle}>Darshan Bookings</Text>
-        <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
-          {renderBookings(bookings.darshanBookings, "Darshan", navigation)}
-        </View>
+      <View style={{ backgroundColor: "white" }}>
+        <ScrollView contentContainerStyle={styles.scrollViewContent}>
+          <Text style={styles.sectionTitle}>Darshan Bookings</Text>
+          <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
+            {renderBookings(bookings.darshanBookings, "Darshan", navigation)}
+          </View>
 
-        <View></View>
-        <Text style={styles.sectionTitle}>Puja Bookings</Text>
-        <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
-          {renderBookings(bookings.pujaBookings, "Puja", navigation)}
-        </View>
-      </ScrollView>
+          <View></View>
+          <Text style={styles.sectionTitle}>Puja Bookings</Text>
+          <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
+            {renderBookings(bookings.pujaBookings, "Puja", navigation)}
+          </View>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -134,6 +136,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "white",
   },
   scrollViewContent: {
     flexGrow: 1,
@@ -145,7 +148,10 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     fontSize: 20,
     marginTop: 30,
-    marginLeft: 16,
+    marginHorizontal: 16,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#eeeeee",
   },
   header: {
     fontWeight: "bold",
@@ -162,7 +168,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
-    elevation: 4,
+    elevation: 1,
     width: "100%",
   },
   cardTitle: {
