@@ -106,7 +106,48 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     calculateFreeSlots();
-  }, []);
+    calculateAverageWaitTime();
+  }, [item.activeVisitors, item.Darshan, item.Puja]);
+
+  const calculateAverageWaitTime = () => {
+    // Constants for queue movement
+    const peoplePerTimeFrame = 5;
+    const timeFrameInSeconds = 20;
+
+    // Calculate total queues
+    const totalQueues = item.Darshan.length + item.Puja.length;
+
+    // Calculate total visitors per queue
+    const avgVisitorsPerQueue = item.activeVisitors / totalQueues;
+
+    // Estimate time to serve one person in seconds
+    const timeToServeOnePerson = timeFrameInSeconds / peoplePerTimeFrame;
+
+    // Calculate total wait time in seconds without considering free slots
+    const totalWaitTimeInSeconds = avgVisitorsPerQueue * timeToServeOnePerson;
+
+    // Adjust wait time based on free slots (consider each free slot as reducing wait time slightly)
+    // Assume each free slot reduces the wait for one person
+    const totalFreeSlotsToday = totalFreeSlots; // Total free slots for the day
+    const avgFreeSlotsPerQueue = totalFreeSlotsToday / totalQueues;
+
+    // Consider each free slot reduces the wait time for one visitor
+    const adjustedWaitTimeInSeconds = Math.max(
+      totalWaitTimeInSeconds - avgFreeSlotsPerQueue * timeToServeOnePerson,
+      20
+    );
+
+    return convertSecondsToHrsMins(adjustedWaitTimeInSeconds);
+  };
+
+  const convertSecondsToHrsMins = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+
+    return `${hours > 0 ? hours + "h " : ""}${minutes}m`;
+  };
+
+  // Make sure to call calculateAverageWaitTime where it needs to be displayed
 
   const renderDarshansAndSewas = () => {
     return (
@@ -176,6 +217,17 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
               Total Free Slots
             </Text>
             <Text style={styles.numberText}>{totalFreeSlots}</Text>
+          </View>
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "center" }}>
+          <View style={styles.infoCard}>
+            <Feather name="loader" size={24} color="black" />
+            <Text
+              style={{ fontWeight: "bold", fontSize: 14, paddingVertical: 5 }}
+            >
+              Avg Wait Time
+            </Text>
+            <Text style={styles.numberText}>{calculateAverageWaitTime()}</Text>
           </View>
         </View>
       </View>

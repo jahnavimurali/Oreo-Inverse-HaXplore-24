@@ -67,7 +67,7 @@ export default function SearchScreen({ navigation }) {
           style={styles.TempleImg}
         />
         <Text style={styles.TempleText}>
-          Which temple would you like to visit, Kaalu?
+          Which temple would you like to visit?
         </Text>
       </View>
       <TextInput
