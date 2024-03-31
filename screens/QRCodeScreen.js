@@ -156,12 +156,15 @@ const QRCodeScreen = ({ route, navigation }) => {
     const booking = {
       bookedSlot: Timestamp.fromDate(selectedSlot.dateTime.toDate()),
       bookingID: bookingID,
-      Name: serviceName,
+      serviceName: serviceName,
+      templeID: item.id,
+      noOfPersons: numberOfPersons,
       paidAmount:
         Number(service[serviceType.toLowerCase() + "Fee"]) *
         Number(numberOfPersons), // Assuming service has darshanFee or pujaFee
       templeLocation: item.location,
       templeName: item.templeName,
+      userEmail: userEmail
       // Add other fields as needed
     };
 
@@ -201,14 +204,13 @@ const QRCodeScreen = ({ route, navigation }) => {
 
   const generateQRCodeData = () => {
     const qrData = {
-      BookingID: bookingID, // Assume bookingID is available in this scope
-      userEmail: userEmail,
-      templeName: item.templeName,
-      templeDocumentID: item.id,
-      serviceType: serviceType,
+      bookedSlot: selectedSlot.dateTime.toDate().toISOString(),
+      bookingID: bookingID,
       serviceName: serviceName,
+      templeID: item.id,
       noOfPersons: numberOfPersons,
-      slotDateTime: selectedSlot.dateTime.toDate().toISOString(), // ISO string for date
+      templeLocation: item.location,
+      templeName: item.templeName,
     };
     setQRCodeData(JSON.stringify(qrData)); // Convert object to string to be used in QR code
   };
