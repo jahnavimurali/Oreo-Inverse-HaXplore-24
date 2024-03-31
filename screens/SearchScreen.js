@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import {
   View,
   TextInput,
@@ -12,31 +12,36 @@ import TempleCard from "../custom/TempleCard";
 import { collection, getDocs } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import db from "./components/firebaseconfig"; // Make sure this is the correct path
+import { useFocusEffect } from "@react-navigation/native";
 
 export default function SearchScreen({ navigation }) {
   const [temples, setTemples] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    const fetchTemples = async () => {
-      const querySnapshot = await getDocs(collection(db, "Temples"));
-      const templePromises = querySnapshot.docs.map(async (doc) => {
-        console.log(doc.id);
-        const templeData = doc.data();
-        const imageRef = ref(getStorage(), templeData.templeImage);
-        const imageUrl = await getDownloadURL(imageRef);
-        return {
-          ...templeData,
-          id: doc.id,
-          imageUrl,
-        };
-      });
-      const templesData = await Promise.all(templePromises);
-      setTemples(templesData);
-    };
+  useFocusEffect(
+    useCallback(() => {
+      const fetchTemples = async () => {
+        const querySnapshot = await getDocs(collection(db, "Temples"));
+        const templePromises = querySnapshot.docs.map(async (doc) => {
+          console.log(doc.id);
+          const templeData = doc.data();
+          const imageRef = ref(getStorage(), templeData.templeImage);
+          const imageUrl = await getDownloadURL(imageRef);
+          return {
+            ...templeData,
+            id: doc.id,
+            imageUrl,
+          };
+        });
+        const templesData = await Promise.all(templePromises);
+        setTemples(templesData);
+      };
 
-    fetchTemples();
-  }, []);
+      fetchTemples();
+    }, [])
+  );
+
+  // The rest of your component code remains the same
 
   const handleSearchChange = (text) => {
     setSearchQuery(text);
