@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons"; // Make sure you import Ionicons
-import TempleDetailHistoryScreen from "./TempleDetailHistoryScreen";
+import TempleDetailAskAIScreen from "./TempleDetailAskAIScreen";
 import TempleDetailTicketScreen from "./TempleDetailTicketScreen";
 import TempleDetailAIMerchScreen from "./TempleDetailAIMerchScreen";
 import TempleDetailDonateScreen from "./TempleDetailDonateScreen";
@@ -46,8 +46,8 @@ const TempleDetailsTopTabs = ({ screenProps }) => {
         }}
       />
       <Tab.Screen
-        name="History"
-        component={TempleDetailHistoryScreen}
+        name="Ask AI"
+        component={TempleDetailAskAIScreen}
         initialParams={{
           item: screenProps.item,
         }}
