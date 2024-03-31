@@ -104,13 +104,13 @@ export default function TicketsScreen({ navigation }) {
     <SafeAreaView>
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <Text style={styles.sectionTitle}>Darshan Bookings</Text>
-        <View style={{ alignItems: "center" }}>
+        <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
           {renderBookings(bookings.darshanBookings, "Darshan", navigation)}
         </View>
 
         <View></View>
         <Text style={styles.sectionTitle}>Puja Bookings</Text>
-        <View style={{ alignItems: "center" }}>
+        <View style={{ alignItems: "center", paddingHorizontal: 20 }}>
           {renderBookings(bookings.pujaBookings, "Puja", navigation)}
         </View>
       </ScrollView>
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: "white",
     padding: 20,
-    marginHorizontal: 16,
+    marginHorizontal: 20,
     marginTop: 16,
     borderRadius: 8,
     shadowColor: "#000",
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 6,
     elevation: 4,
-    width: 375,
+    width: "100%",
   },
   cardTitle: {
     fontSize: 18,
