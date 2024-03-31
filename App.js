@@ -14,6 +14,7 @@ import BookingSlotsScreen from "./screens/BookingSlotsScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import { UserProvider } from "./screens/components/UserContext";
 import QRCodeScreen from "./screens/QRCodeScreen";
+import BookingDetailScreen from "./screens/BookingDetailScreen";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -64,13 +65,13 @@ function HomeTabs() {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Tickets"
+        component={TicketsScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Tickets"
-        component={TicketsScreen}
+        name="Settings"
+        component={SettingsScreen}
         options={{ headerShown: false }}
       />
     </Tab.Navigator>
@@ -92,6 +93,7 @@ export default function App() {
             component={HomeTabs}
             options={{ headerShown: false }}
           />
+          <Stack.Screen name="BookingDetail" component={BookingDetailScreen} />
           <Stack.Screen
             name="TempleDetail"
             component={TempleDetailScreen}

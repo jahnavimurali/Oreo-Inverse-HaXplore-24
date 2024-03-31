@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image,
   FlatList,
+  zz,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TempleCard from "../custom/TempleCard";
@@ -76,7 +77,7 @@ export default function SearchScreen({ navigation }) {
         onChangeText={handleSearchChange}
         placeholderTextColor={"black"}
       />
-      {searchQuery && (
+      {searchQuery && filteredTemples.length > 0 ? (
         <FlatList
           data={filteredTemples}
           keyExtractor={(item) => item.id}
@@ -94,7 +95,11 @@ export default function SearchScreen({ navigation }) {
             />
           )}
         />
-      )}
+      ) : searchQuery && filteredTemples.length === 0 ? (
+        <View style={styles.noResultsContainer}>
+          <Text style={styles.noResultsText}>No temples found</Text>
+        </View>
+      ) : null}
     </SafeAreaView>
   );
 }
@@ -144,5 +149,16 @@ const styles = StyleSheet.create({
   },
   templelist: {
     padding: 15,
+  },
+  noResultsContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 20,
+  },
+  noResultsText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "gray",
   },
 });
