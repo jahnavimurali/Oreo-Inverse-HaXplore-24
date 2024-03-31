@@ -101,6 +101,8 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
       }
     });
 
+    console.log("Free slot", freeSlots);
+
     setTotalFreeSlots(freeSlots);
   };
 
@@ -183,7 +185,7 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
             <Feather name="alert-circle" size={24} color="black" />
             <Text style={styles.alertsHeaderText}>Alerts and updates</Text>
           </View>
-          <Text style={styles.lastUpdatedText}>Last updated 7:12pm</Text>
+          <Text style={styles.lastUpdatedText}>Last updated 2 mins ago</Text>
         </View>
         {alerts.map((alert, index) => (
           <Text key={index} style={styles.alertText}>
@@ -214,7 +216,7 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
             <Text
               style={{ fontWeight: "bold", fontSize: 14, paddingVertical: 5 }}
             >
-              Total Free Slots
+              Free Slots Today
             </Text>
             <Text style={styles.numberText}>{totalFreeSlots}</Text>
           </View>
