@@ -211,6 +211,7 @@ const QRCodeScreen = ({ route, navigation }) => {
       noOfPersons: numberOfPersons,
       templeLocation: item.location,
       templeName: item.templeName,
+      userEmail: userEmail
     };
     setQRCodeData(JSON.stringify(qrData)); // Convert object to string to be used in QR code
   };

@@ -10,7 +10,6 @@ import SettingsScreen from "./screens/SettingsScreen";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import colors from "./Constants/Colors";
 import TempleDetailScreen from "./screens/TempleDetailScreen";
-import WalletConnect from "./screens/WalletConnect";
 import BookingSlotsScreen from "./screens/BookingSlotsScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import { UserProvider } from "./screens/components/UserContext";
@@ -98,11 +97,6 @@ export default function App() {
             component={TempleDetailScreen}
             options={{ headerShown: false }} // Customize as needed for your header
           />
-        <Stack.Screen
-          name="WalletConnect"
-          component={WalletConnect}
-          options={{ headerShown: false }} // Customize as needed for your header
-        />
           <Stack.Screen
             name="BookingSlots"
             component={BookingSlotsScreen}
