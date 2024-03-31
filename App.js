@@ -15,6 +15,7 @@ import PaymentScreen from "./screens/PaymentScreen";
 import { UserProvider } from "./screens/components/UserContext";
 import QRCodeScreen from "./screens/QRCodeScreen";
 import BookingDetailScreen from "./screens/BookingDetailScreen";
+import Welcome from "./screens/Welcome"
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -83,6 +84,7 @@ export default function App() {
     <UserProvider>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }}/>
           <Stack.Screen
             name="Auth"
             component={AuthStack}
