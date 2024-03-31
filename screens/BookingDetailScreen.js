@@ -20,7 +20,7 @@ const BookingDetailScreen = ({ route, navigation }) => {
   useEffect(() => {
     // Directly use the booking data to generate QR code data
     const qrData = JSON.stringify({
-      bookedSlot: booking.bookedSlot,
+      bookedSlot: booking.bookedSlot.toDate().toISOString(),
       bookingID: booking.bookingID,
       serviceName: booking.serviceName,
       templeID: booking.templeID,
