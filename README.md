@@ -1,5 +1,9 @@
 # Team OreoInverse HaxPlore'24 IIT BHU, Varanasi
 
+## Our solution includes two other apps as well, please visit the following repos
+### - [Oreo Inverse Admin Portal WebApp](https://github.com/jahnavimurali/Oreo-Inverse-TemplePortal-WebApp)
+### - [Oreo Inverse QR Scanning App](https://github.com/jahnavimurali/Oreo-Inverse-QR-Scanning-App)
+
 ## Project Vihara: User App
 
 This application was developed as part of the 72-hour online hackathon HaxPlore CodeFest 2024 conducted by IIT BHU, Varanasi.
