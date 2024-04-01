@@ -18,12 +18,12 @@ For a detailed description and screenshots, please visit [here](https://drive.go
 
 
 #### Splash Screen
-![image](https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/caca6715-c936-4cdb-98c2-fd33b2014519)
+
 
 
 #### Language Translation
 
-(https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55)
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55
 
 
 #### Search Screen
@@ -32,11 +32,8 @@ https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/a66abd
 
 
 
-#### Temple Screen
-[![Temple Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
-
-#### Booking Screen
-[![Booking Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+#### Temple Screen and Booking Screen
+https://drive.google.com/file/d/1E0ZfOJL_5OsdhMpG52Jd0NJ64v1vo2S5/view?usp=sharing
 
 #### Payment Screen
 [![Payment Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
