@@ -14,7 +14,7 @@ Vihara is a modern ticketing system for seamless access to temples. Users can bo
 
 This repository contains the user app for our project built using React Native Expo. 
 
-For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing).
+For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1c1nilBPz3bAnFcCjztXgDxFG9jRjn_jm/view).
 
 
 
