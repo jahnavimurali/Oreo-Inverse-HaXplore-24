@@ -1,5 +1,3 @@
-// BookingSlotsScreen.js
-
 import React, { useState } from "react";
 import {
   View,
@@ -178,7 +176,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     marginVertical: 8,
-    minWidth: "30%", // Approximately half the container width minus margin
+    minWidth: "30%",
     textAlign: "center",
     borderWidth: 1,
     borderColor: "#e6e6e6",
@@ -190,7 +188,7 @@ const styles = StyleSheet.create({
     borderColor: "#AAAAAA",
   },
   slotCardSelected: {
-    borderColor: "black", // Or any other color that indicates selection
+    borderColor: "black",
   },
   slotTime: {
     fontSize: 16,
@@ -200,12 +198,11 @@ const styles = StyleSheet.create({
   slotsLeft: {
     fontSize: 14,
     color: "#4CAF50",
-    fontWeight: "600", // Or the green color from your design
+    fontWeight: "600",
   },
   noSlotsText: {
     fontSize: 18,
-    color: "#FF0000", // Or the red color from your design
-    marginTop: 20,
+    color: "#FF0000",
     alignSelf: "center",
     fontWeight: "500",
   },
@@ -241,10 +238,8 @@ const styles = StyleSheet.create({
   },
   slotsLeftRed: {
     fontSize: 14,
-    color: "#FF0000", // red color for slots less than 20
+    color: "#FF0000",
   },
-
-  // ... additional styles for selected slots, etc.
 });
 
 export default BookingSlotsScreen;

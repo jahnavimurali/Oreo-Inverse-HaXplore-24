@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import db from "./firebaseconfig"; // Adjust the path as necessary
+import db from "./firebaseconfig";
 
 const fetchTemples = async () => {
   const querySnapshot = await getDocs(collection(db, "Temples"));
@@ -9,7 +9,6 @@ const fetchTemples = async () => {
   });
 };
 
-// Call fetchTemples inside useEffect in your App component or wherever appropriate
 useEffect(() => {
   fetchTemples().catch(console.error);
 }, []);

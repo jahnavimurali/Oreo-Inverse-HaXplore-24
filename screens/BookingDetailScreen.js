@@ -14,11 +14,9 @@ const BookingDetailScreen = ({ route, navigation }) => {
   const { booking } = route.params;
   console.log("Bookings : ", booking);
 
-  // Remove the unused useState for loading as it's not used here
   const [qrCodeData, setQRCodeData] = useState(null);
 
   useEffect(() => {
-    // Directly use the booking data to generate QR code data
     const qrData = JSON.stringify({
       bookedSlot: booking.bookedSlot.toDate().toISOString(),
       bookingID: booking.bookingID,
@@ -34,7 +32,7 @@ const BookingDetailScreen = ({ route, navigation }) => {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    // Options to format the date
+
     const options = {
       year: "numeric",
       month: "long",
@@ -119,9 +117,9 @@ const styles = StyleSheet.create({
     marginVertical: 70,
     paddingVertical: 70,
     paddingHorizontal: 15,
-    backgroundColor: "white", // Use white or another color for the card
-    borderRadius: 8, // Rounded corners
-    // Shadow for iOS
+    backgroundColor: "white",
+    borderRadius: 8,
+
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -129,7 +127,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.1,
     shadowRadius: 3.84,
-    // Elevation for Android
+
     elevation: 1,
   },
 
@@ -184,7 +182,7 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
   homeButton: {
-    backgroundColor: colors.PrimaryButtonColor, // Customize button color
+    backgroundColor: colors.PrimaryButtonColor,
     padding: 15,
     borderRadius: 8,
     alignItems: "center",

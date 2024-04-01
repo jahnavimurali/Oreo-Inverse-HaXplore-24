@@ -16,7 +16,6 @@ import colors from "../Constants/Colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const BookingCard = ({ booking, type, navigation }) => {
-  // Assuming the `booking` object has all required fields.
   const formattedDate = getFormattedDate(
     booking.bookedSlot.seconds,
     booking.bookedSlot.nanoseconds
@@ -49,7 +48,7 @@ export default function TicketsScreen({ navigation }) {
     darshanBookings: [],
     pujaBookings: [],
   });
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useFocusEffect(
     useCallback(() => {

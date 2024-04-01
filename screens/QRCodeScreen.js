@@ -37,11 +37,10 @@ const QRCodeScreen = ({ route, navigation }) => {
   const [qrCodeData, setQRCodeData] = useState(null);
   const [userDetails, setUserDetails] = useState(null);
 
-  // Generate a random booking ID
   const bookingID = Math.random().toString(36).substring(2, 10);
 
   useEffect(() => {
-    setLoading(true); // Start loading
+    setLoading(true);
     updateCurrentBookings()
       .then(() => {
         return updateUserBookings(
@@ -54,13 +53,13 @@ const QRCodeScreen = ({ route, navigation }) => {
           service
         );
       })
-      .then(generateQRCodeData) // Generate QR code data after updates
+      .then(generateQRCodeData)
       .then(() => {
-        setLoading(false); // Stop loading when everything is complete
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Failed to update bookings:", error);
-        setLoading(false); // Stop loading if there is an error
+        setLoading(false);
       });
   }, []);
 
@@ -118,7 +117,7 @@ const QRCodeScreen = ({ route, navigation }) => {
       const updatedServices = [...services];
       updatedServices[serviceIndex] = updatedService;
 
-      // Write the update back to Firestore
+      // Writ the update back to Firestore
       await updateDoc(templeDocRef, {
         [serviceArrayName]: updatedServices,
       });
@@ -152,7 +151,6 @@ const QRCodeScreen = ({ route, navigation }) => {
     // Get the first matching user document
     const userDocRef = querySnapshot.docs[0].ref;
 
-    // Create a booking object
     const booking = {
       bookedSlot: Timestamp.fromDate(selectedSlot.dateTime.toDate()),
       bookingID: bookingID,
@@ -161,37 +159,30 @@ const QRCodeScreen = ({ route, navigation }) => {
       noOfPersons: numberOfPersons,
       paidAmount:
         Number(service[serviceType.toLowerCase() + "Fee"]) *
-        Number(numberOfPersons), // Assuming service has darshanFee or pujaFee
+        Number(numberOfPersons),
       templeLocation: item.location,
       templeName: item.templeName,
-      userEmail: userEmail
-      // Add other fields as needed
+      userEmail: userEmail,
     };
 
     try {
-      // Fetch the current user data
       const userData = (await getDoc(userDocRef)).data();
       setUserDetails({
-        name: userData.Uname, // Assuming the name is stored under 'Uname'
+        name: userData.Uname,
         gender: userData.Gender,
         Age: userData.Age,
-        email: userData.Email, // Assuming the gender is stored under 'Gender'
-        // Add other details you want to store
+        email: userData.Email,
       });
 
-      // Determine the field to update based on service type
       const bookingFieldName =
         serviceType === "Darshan" ? "darshanBookings" : "pujaBookings";
 
-      // Get the existing bookings or initialize if not present
       const existingBookings = userData[bookingFieldName]
         ? userData[bookingFieldName]
         : [];
 
-      // Add the new booking to the array
       existingBookings.push(booking);
 
-      // Update the user document with the new array of bookings
       await updateDoc(userDocRef, {
         [bookingFieldName]: existingBookings,
       });
@@ -211,27 +202,25 @@ const QRCodeScreen = ({ route, navigation }) => {
       noOfPersons: numberOfPersons,
       templeLocation: item.location,
       templeName: item.templeName,
-      userEmail: userEmail
+      userEmail: userEmail,
     };
-    setQRCodeData(JSON.stringify(qrData)); // Convert object to string to be used in QR code
+    setQRCodeData(JSON.stringify(qrData));
   };
 
   const formatDate = (date) => {
-    // Options to format the date
     const options = {
       year: "numeric",
       month: "long",
       day: "numeric",
       weekday: "long",
     };
-    // Format the date
+
     return date.toLocaleDateString(undefined, options);
   };
 
   const formatTime = (date) => {
-    // Options to format the time
     const options = { hour: "2-digit", minute: "2-digit", hour12: true };
-    // Format the time
+
     return date.toLocaleTimeString(undefined, options);
   };
 
@@ -324,9 +313,9 @@ const styles = StyleSheet.create({
   card: {
     paddingVertical: 30,
     paddingHorizontal: 15,
-    backgroundColor: "white", // Use white or another color for the card
-    borderRadius: 8, // Rounded corners
-    // Shadow for iOS
+    backgroundColor: "white",
+    borderRadius: 8,
+
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -334,7 +323,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.1,
     shadowRadius: 3.84,
-    // Elevation for Android
+
     elevation: 1,
   },
 
@@ -389,7 +378,7 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
   homeButton: {
-    backgroundColor: colors.PrimaryButtonColor, // Customize button color
+    backgroundColor: colors.PrimaryButtonColor,
     padding: 15,
     borderRadius: 8,
     alignItems: "center",

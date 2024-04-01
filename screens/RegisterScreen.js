@@ -33,19 +33,19 @@ export default function RegisterScreen({ navigation }) {
         setUserEmail(userCredentials.user.email);
         console.log("User registered:", user.email);
 
-        const userDocRef = doc(db, "Users", user.uid); // Using the UID as the document ID for the user
+        const userDocRef = doc(db, "Users", user.uid);
         await setDoc(userDocRef, {
           Age: age,
           Email: email,
-          Gender: gender.toLowerCase(), // Saving gender in lowercase as per your picker values
+          Gender: gender.toLowerCase(),
           Uname: name,
-          Upassword: password, // It's generally not a good idea to store passwords in plaintext
+          Upassword: password,
           darshanBookings: [],
           grievances: [],
           mobile: phoneNo,
           pujaBookings: [],
         });
-        navigation.navigate("HomeTabs"); // Navigate after successful registration and document creation
+        navigation.navigate("HomeTabs");
       })
       .catch((error) => alert(error.message));
   };
@@ -135,14 +135,14 @@ export default function RegisterScreen({ navigation }) {
 const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
-    backgroundColor: "white", // or any color that matches your design
+    backgroundColor: "white",
   },
   keyboardAvoidingView: {
     flex: 1,
   },
   scrollViewContent: {
     flexGrow: 1,
-    justifyContent: "space-between", // This will ensure your content is spaced between top and bottom
+    justifyContent: "space-between",
   },
   topView: {
     padding: 10,
@@ -163,13 +163,13 @@ const styles = StyleSheet.create({
   },
   ageInput: {
     flex: 1,
-    marginRight: 25, // Adjust based on your layout
+    marginRight: 25,
   },
   pickerContainer: {
     flex: 1,
   },
   pickerLabel: {
-    marginBottom: 10, // Space between label and input field
+    marginBottom: 10,
     fontWeight: "bold",
   },
   picker: {

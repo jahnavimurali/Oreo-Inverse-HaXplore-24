@@ -1,9 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCzGom4adGVXad8cnnv6pSQgJ4Q8-y0Y1c",
   authDomain: "oreoinverse-1c6b6.firebaseapp.com",

@@ -57,7 +57,6 @@ const PaymentScreen = ({ route, navigation }) => {
   const serviceFee = service.darshanFee || service.pujaFee;
   const { userEmail } = useUser();
 
-  // State to track the selected payment method
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
 
   const getFormattedDate = (seconds, nanoseconds) => {
@@ -73,7 +72,6 @@ const PaymentScreen = ({ route, navigation }) => {
     });
   };
 
-  // Function to handle payment finalization
   const handlePaymentFinalization = () => {
     navigation.navigate("QRCodeScreen", {
       item,
@@ -269,8 +267,8 @@ const styles = StyleSheet.create({
     marginTop: 30,
     margin: 16,
     borderColor: "#e7e7e7",
-    flexDirection: "row", // Align children in a row
-    justifyContent: "space-between", // Distribute children with space between
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
   },
   summaryTitle: {

@@ -15,7 +15,7 @@ import PaymentScreen from "./screens/PaymentScreen";
 import { UserProvider } from "./screens/components/UserContext";
 import QRCodeScreen from "./screens/QRCodeScreen";
 import BookingDetailScreen from "./screens/BookingDetailScreen";
-import Welcome from "./screens/Welcome"
+import Welcome from "./screens/Welcome";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -45,11 +45,11 @@ function HomeTabs() {
           } else if (route.name === "Settings") {
             iconName = focused ? "settings" : "settings-outline";
           }
-          // You can return any component that you like here!
+
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "black", // Active icon color
-        tabBarInactiveTintColor: "gray", // Inactive icon color
+        tabBarActiveTintColor: "black",
+        tabBarInactiveTintColor: "gray",
         tabBarStyle: {
           paddingBottom: 15,
           paddingTop: 15,
@@ -84,7 +84,11 @@ export default function App() {
     <UserProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }}/>
+          <Stack.Screen
+            name="Welcome"
+            component={Welcome}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Auth"
             component={AuthStack}
@@ -99,12 +103,12 @@ export default function App() {
           <Stack.Screen
             name="TempleDetail"
             component={TempleDetailScreen}
-            options={{ headerShown: false }} // Customize as needed for your header
+            options={{ headerShown: false }}
           />
           <Stack.Screen
             name="BookingSlots"
             component={BookingSlotsScreen}
-            options={{ headerShown: true, title: "" }} // Show header for this screen
+            options={{ headerShown: true, title: "" }}
           />
           <Stack.Screen name="Payment" component={PaymentScreen} />
           <Stack.Screen name="QRCodeScreen" component={QRCodeScreen} />

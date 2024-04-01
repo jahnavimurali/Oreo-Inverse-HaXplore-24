@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 import requests
 import json
-
+import time
 app = FastAPI()
 
 @app.get("/translate")
@@ -23,6 +23,8 @@ async def main(inlan: str, outlan: str, text: str):
             },
         },
     }
+
+    time.sleep(1)
     
     response = requests.post(url, headers=headers, json=payload)
     

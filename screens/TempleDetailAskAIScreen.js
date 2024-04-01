@@ -19,7 +19,6 @@ const TempleDetailAskAIScreen = ({ route }) => {
 
   const API_KEY = "AIzaSyD-XOPlyTGUWLcFdiFWd9g7ksF-rZN23Ds";
 
-  // Function to simulate starting the chat
   useEffect(() => {
     setMessages([
       {
@@ -33,15 +32,12 @@ const TempleDetailAskAIScreen = ({ route }) => {
   const sendMessage = async () => {
     const messageID = messages.length;
     setLoading(true);
-    // Add user's message
+
     const userMessage = { id: Date.now(), text: userInput, type: "user" };
 
-    // Add user's message to the start of the messages array
     setMessages((prevMessages) => [userMessage, ...prevMessages]);
 
-    // Add a pause for better UX
     setTimeout(async () => {
-      // Simulate AI response
       const prompt = `For temple ${item.templeName}, the user asked: "${userInput}"`;
       const genAI = new GoogleGenerativeAI.GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
@@ -49,11 +45,9 @@ const TempleDetailAskAIScreen = ({ route }) => {
       const response = result.response;
       const botMessageText = response.text();
 
-      // This is a placeholder for the actual AI response
-
       // const botMessageText = "This is a simulated response from the AI.";
       const botMessage = {
-        id: Date.now() + 1, // Ensure a unique ID for the bot message
+        id: Date.now() + 1,
         text: botMessageText,
         type: "bot",
       };
@@ -64,16 +58,13 @@ const TempleDetailAskAIScreen = ({ route }) => {
 
     setUserInput("");
   };
-
+  //PArsing the returned text for better formatting
   const parseMarkdown = (text) => {
-    // Split the text into lines
     const lines = text.split("\n");
 
-    // Map over each line to create text elements
     return lines.map((line, index) => {
       if (line.startsWith("**") && line.endsWith("**")) {
-        // It's a heading
-        const heading = line.slice(2, -2); // Remove the asterisks
+        const heading = line.slice(2, -2);
         return (
           <Text key={index} style={styles.heading}>
             {heading}
@@ -99,7 +90,6 @@ const TempleDetailAskAIScreen = ({ route }) => {
   };
 
   const renderMessage = ({ item }) => {
-    // If the message is from the bot and contains Markdown, parse it
     if (item.type === "bot") {
       const parsedText = parseMarkdown(item.text);
       return (
@@ -108,7 +98,6 @@ const TempleDetailAskAIScreen = ({ route }) => {
         </View>
       );
     } else {
-      // If it's a user message or doesn't contain Markdown, render it normally
       return (
         <View style={[styles.messageContainer, styles.userMessage]}>
           <Text style={styles.messageText}>{item.text}</Text>

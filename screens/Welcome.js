@@ -11,16 +11,14 @@ const Welcome = ({ navigation }) => {
         style={styles.logo}
       />
 
-      {/* Texts directly below the image, letting the container's flex layout handle positioning */}
       <View style={styles.textContainer}>
         <Text style={styles.title}>Worship without worry</Text>
         <Text style={styles.subtitle}>
           Book tickets, choose your slot and enhance your temple experience on
-          TemplePass
+          Vihara
         </Text>
       </View>
 
-      {/* Button and login suggestion */}
       <Button
         title="Join Now"
         onPress={() => navigation.navigate("Auth", { screen: "Register" })}
@@ -50,12 +48,12 @@ const styles = StyleSheet.create({
     height: 150,
     width: 100,
     marginBottom: 70,
-    marginTop: 220, // Adjust this value as needed
+    marginTop: 220,
   },
   textContainer: {
     width: "90%",
     alignItems: "center",
-    marginBottom: 90, // Space between text and button
+    marginBottom: 90,
   },
   title: {
     fontSize: 30,

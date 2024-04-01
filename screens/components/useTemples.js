@@ -18,7 +18,7 @@ const useTemples = () => {
           return {
             id: doc.id,
             ...data,
-            templeImage: imageUrl, // Replace with HTTPS URL
+            templeImage: imageUrl,
           };
         })
       );

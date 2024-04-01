@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 import colors from "../Constants/Colors";
-import { useTranslation } from "./Translation"; // Assuming this is a custom hook for translation
+import { useTranslation } from "./Translation"; //custom hook for translation
 import languages from "../Constants/Language";
 import { Picker } from "@react-native-picker/picker";
 import { firebase_auth } from "./components/firebaseconfig";
@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUserEmail } = useUser();
-  const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default language English
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
 
   useEffect(() => {
     const unsubscribe = firebase_auth.onAuthStateChanged((user) => {

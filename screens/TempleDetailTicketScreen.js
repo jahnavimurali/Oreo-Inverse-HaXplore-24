@@ -39,7 +39,6 @@ const DarshanCard = ({ darshan, navigation, item }) => {
   );
 };
 
-// Component to represent a single darshan/sewa card
 const PujaCard = ({ puja, navigation, item }) => {
   return (
     <View style={styles.card}>
@@ -56,8 +55,8 @@ const PujaCard = ({ puja, navigation, item }) => {
         style={styles.bookButton}
         onPress={() =>
           navigation.navigate("BookingSlots", {
-            item: item, // Assume 'item.templeName' is the name of the temple
-            service: puja, // Or puja.pujaName for PujaCard
+            item: item,
+            service: puja,
           })
         }
       >
@@ -77,15 +76,13 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
     const currentDateTime = new Date();
     let freeSlots = 0;
 
-    // Assuming that 'allSlots' is an array containing all the 'Darshan' and 'Puja' slots
     const allSlots = [
       ...item.Darshan.flatMap((d) => d.Slots),
       ...item.Puja.flatMap((p) => p.Slots),
     ];
 
     allSlots.forEach((slot) => {
-      // Convert the Firebase timestamp to a JavaScript Date object
-      const slotDateTime = slot.dateTime.toDate(); // Using toDate() method
+      const slotDateTime = slot.dateTime.toDate();
       console.log(slotDateTime);
 
       if (
@@ -148,8 +145,6 @@ const TempleDetailTicketScreen = ({ route, navigation }) => {
 
     return `${hours > 0 ? hours + "h " : ""}${minutes}m`;
   };
-
-  // Make sure to call calculateAverageWaitTime where it needs to be displayed
 
   const renderDarshansAndSewas = () => {
     return (
@@ -269,7 +264,7 @@ const styles = StyleSheet.create({
   alertsHeaderText: {
     fontSize: 18,
     fontWeight: "bold",
-    marginLeft: 8, // Spacing between the icon and the text
+    marginLeft: 8,
   },
   lastUpdatedText: {
     fontSize: 12,
@@ -316,7 +311,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
     elevation: 3,
-    width: 150, // Set a fixed width for each card
+    width: 150,
   },
   numberText: {
     fontSize: 18,

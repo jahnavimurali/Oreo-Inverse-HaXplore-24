@@ -12,7 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import TempleCard from "../custom/TempleCard";
 import { collection, getDocs } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import db from "./components/firebaseconfig"; // Make sure this is the correct path
+import db from "./components/firebaseconfig";
 import { useFocusEffect } from "@react-navigation/native";
 
 export default function SearchScreen({ navigation }) {
@@ -41,8 +41,6 @@ export default function SearchScreen({ navigation }) {
       fetchTemples();
     }, [])
   );
-
-  // The rest of your component code remains the same
 
   const handleSearchChange = (text) => {
     setSearchQuery(text);
@@ -106,7 +104,7 @@ export default function SearchScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Added to ensure SafeAreaView fills the screen
+    flex: 1,
     backgroundColor: "white",
   },
   TopView: {
@@ -140,8 +138,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderWidth: 1,
     padding: 10,
-    borderRadius: 10, // Rounded corners for the input field
-    borderColor: "gray", // Light gray border color
+    borderRadius: 10,
+    borderColor: "gray",
   },
   templeItem: {
     padding: 10,
