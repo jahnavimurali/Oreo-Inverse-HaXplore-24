@@ -23,8 +23,15 @@ For a detailed description and screenshots, please visit [here](https://drive.go
 For the full demo visit this link 
 (https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing)
 
+## Splash Screen
 
-### Language Translation
+<p align="center">
+  <img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/dc73b6df-1d0e-4247-a60f-d8f44e53e2fb" width="30%" />
+</p>
+
+
+
+## Language Translation
 
 https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55
 
