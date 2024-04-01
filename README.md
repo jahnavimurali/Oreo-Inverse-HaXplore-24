@@ -25,7 +25,7 @@ For the full demo visit this link
 
 ## Splash Screen
 
-<p align="center">
+<p>
   <img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/dc73b6df-1d0e-4247-a60f-d8f44e53e2fb" width="30%" />
 </p>
 
