@@ -1,6 +1,6 @@
 # Team OreoInverse HaxPlore'24 IIT BHU, Varanasi
 
-## *IMPORTANT* Our solution includes two other apps as well, please visit the following repos
+## *IMPORTANT!!* Our solution includes two other apps as well, please visit the following repos
 ### - [Oreo Inverse Admin Portal WebApp](https://github.com/jahnavimurali/Oreo-Inverse-TemplePortal-WebApp)
 ### - [Oreo Inverse QR Scanning App](https://github.com/jahnavimurali/Oreo-Inverse-QR-Scanning-App)
 
