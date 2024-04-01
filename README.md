@@ -17,29 +17,44 @@ This repository contains the user app for our project built using React Native E
 For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing).
 
 
-#### Splash Screen
+
+## App Screenshots 
+
+For the full demo visit this link 
+(https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing)
 
 
-
-#### Language Translation
+### Language Translation
 
 https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55
 
 
-#### Search Screen
+### Search Screen
 
 https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/a66abda9-fa48-4194-aa2f-a7510a0206e4
 
+### AI Chatbot For Temple Info Assistant
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/b57d8024-ea98-4cc9-9cf8-9d123b6adae9
 
 
-#### Temple Screen and Booking Screen
-https://drive.google.com/file/d/1E0ZfOJL_5OsdhMpG52Jd0NJ64v1vo2S5/view?usp=sharing
+### Temple Screen 
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/c636bc26-c33c-4187-bdfa-4e030c8cf1b8
 
-#### Payment Screen
-[![Payment Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+### Booking Screen
 
-#### QR Code Screen
-[![QR Code Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/570043ed-ad84-4272-aaf5-15956aee6eb0
+
+
+### Payment Screenand QR Code Screen
+
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/72c01a0f-1afd-4d30-9911-aa7916ece741
+
+
+
+
 
 
 
