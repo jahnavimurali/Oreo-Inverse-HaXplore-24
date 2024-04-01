@@ -29,22 +29,33 @@ For the full demo visit this link
   <img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/dc73b6df-1d0e-4247-a60f-d8f44e53e2fb" width="30%" />
 </p>
 
+## Language Translation
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55
 
 
-<table align="center">
-<tr>
-<td align="center"><b>Language Translation</b><br><img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55" width="100%" /></td>
-<td align="center"><b>Search Screen</b><br><img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/a66abda9-fa48-4194-aa2f-a7510a0206e4" width="100%" /></td>
-</tr>
-<tr>
-<td align="center"><b>AI Chatbot For Temple Info Assistant</b><br><img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/b57d8024-ea98-4cc9-9cf8-9d123b6adae9" width="100%" /></td>
-<td align="center"><b>Temple Screen</b><br><img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/c636bc26-c33c-4187-bdfa-4e030c8cf1b8" width="100%" /></td>
-</tr>
-<tr>
-<td align="center"><b>Booking Screen</b><br><img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/570043ed-ad84-4272-aaf5-15956aee6eb0" width="100%" /></td>
-<td align="center"><b>Payment Screen and QR Code Screen</b><br><img src="https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/72c01a0f-1afd-4d30-9911-aa7916ece741" width="100%" /></td>
-</tr>
-</table>
+### Search Screen
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/a66abda9-fa48-4194-aa2f-a7510a0206e4
+
+### AI Chatbot For Temple Info Assistant
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/b57d8024-ea98-4cc9-9cf8-9d123b6adae9
+
+
+### Temple Screen 
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/c636bc26-c33c-4187-bdfa-4e030c8cf1b8
+
+### Booking Screen
+
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/570043ed-ad84-4272-aaf5-15956aee6eb0
+
+
+### Payment Screenand QR Code Screen
+
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/72c01a0f-1afd-4d30-9911-aa7916ece741
 
 
 
