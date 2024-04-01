@@ -9,12 +9,14 @@ import {
 } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import colors from "../Constants/Colors";
+import CryptoJS from "crypto-js";
 
 const BookingDetailScreen = ({ route, navigation }) => {
   const { booking } = route.params;
   console.log("Bookings : ", booking);
 
   const [qrCodeData, setQRCodeData] = useState(null);
+  const SECRET_KEY = "00112233445566778899aabbccddeeff";
 
   useEffect(() => {
     const qrData = JSON.stringify({
@@ -27,7 +29,10 @@ const BookingDetailScreen = ({ route, navigation }) => {
       templeName: booking.templeName,
       userEmail: booking.userEmail,
     });
-    setQRCodeData(qrData);
+
+    console.log(qrData);
+    const encryptedData = CryptoJS.AES.encrypt(qrData, SECRET_KEY).toString();
+    setQRCodeData(encryptedData);
   }, []);
 
   const formatDate = (dateString) => {

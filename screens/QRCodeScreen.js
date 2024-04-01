@@ -21,6 +21,7 @@ import {
 import db from "./components/firebaseconfig";
 import { ActivityIndicator } from "react-native";
 import colors from "../Constants/Colors";
+import CryptoJS from "crypto-js";
 
 const QRCodeScreen = ({ route, navigation }) => {
   const {
@@ -193,6 +194,8 @@ const QRCodeScreen = ({ route, navigation }) => {
     }
   };
 
+  const SECRET_KEY = "00112233445566778899aabbccddeeff";
+
   const generateQRCodeData = () => {
     const qrData = {
       bookedSlot: selectedSlot.dateTime.toDate().toISOString(),
@@ -204,7 +207,12 @@ const QRCodeScreen = ({ route, navigation }) => {
       templeName: item.templeName,
       userEmail: userEmail,
     };
-    setQRCodeData(JSON.stringify(qrData));
+    const qrDataString = JSON.stringify(qrData);
+    const encryptedData = CryptoJS.AES.encrypt(
+      qrDataString,
+      SECRET_KEY
+    ).toString();
+    setQRCodeData(encryptedData);
   };
 
   const formatDate = (date) => {
