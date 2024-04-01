@@ -17,6 +17,35 @@ This repository contains the user app for our project built using React Native E
 For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing).
 
 
+#### Splash Screen
+![image](https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/caca6715-c936-4cdb-98c2-fd33b2014519)
+
+
+#### Language Translation
+
+(https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/fbc33027-b25a-42d5-b274-2c8fc8c98b55)
+
+
+#### Search Screen
+
+https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24/assets/60043776/a66abda9-fa48-4194-aa2f-a7510a0206e4
+
+
+
+#### Temple Screen
+[![Temple Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+
+#### Booking Screen
+[![Booking Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+
+#### Payment Screen
+[![Payment Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+
+#### QR Code Screen
+[![QR Code Screen](https://img.youtube.com/vi/VIDEO_URL_PLACEHOLDER/0.jpg)](https://www.youtube.com/watch?v=VIDEO_URL_PLACEHOLDER)
+
+
+
 ### Prerequisites
 
 - [Node JS](https://nodejs.org/en)
